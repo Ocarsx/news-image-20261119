@@ -1,27 +1,24 @@
 #!/usr/bin/env python3
-"""Entry for make.fun competition news-image-20261119.
+"""Copy the bundled entry.png to /output/entry.png, byte for byte.
 
-Copies the pre-built entry.png sitting next to this file into the grader's
-output directory. Python 3.13 standard library only; no network access.
-
-Run locally with:
-    mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+The repository holds the finished image; this program only places it
+where the grader looks. Standard library only, no network, and fully
+deterministic: the same bytes go out on every run.
 """
-
 import os
 import shutil
-from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-OUT_DIR = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 
 
-def main() -> None:
-    source = HERE / "entry.png"
-    if not source.is_file():
-        raise FileNotFoundError(f"missing entry image: {source}")
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(source, OUT_DIR / "entry.png")
+def main():
+    os.makedirs(OUT_DIR, exist_ok=True)
+    src = os.path.join(HERE, "entry.png")
+    dst = os.path.join(OUT_DIR, "entry.png")
+    shutil.copyfile(src, dst)
+    if os.path.getsize(dst) != os.path.getsize(src):
+        raise RuntimeError("entry.png copy is incomplete")
 
 
 if __name__ == "__main__":
