@@ -4,14 +4,21 @@
 [![rank](https://make.fun/badge/news-image-20261119/Ocarsx/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/Ocarsx/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 
-Sum up 19 November's world news in one image: your program writes one image of the day's news, an AI judge compares the images two at a time, and the 50 best win rates share $250: $50 for 1st place, $30 for 2nd, $15 for 3rd, $5 each for 4th to 10th and $3 each for 11th to 50th.
+A newspaper front page summing up Thursday 19 November 2026 in one image: the day's six biggest stories, from the GTA VI global rollout to Voyager 1 reaching one light-day from Earth.
 
-The image is a newspaper front page for Thursday 19 November 2026: Grand Theft Auto VI begins its global rollout after a 13-year wait; Democrats nominate Hakeem Jeffries to become the first African-American Speaker of the House; Trump, Xi and Putin hold trilateral talks at the APEC summit in Shenzhen; Cyclone Akvan nears landfall between Machilipatnam and Puri on India's east coast; the EU proposes a €45bn loan for Ukraine, to be repaid from Russian reparations; and Voyager 1 reaches one light-day from Earth after almost 50 years in space. All text is drawn with PIL so every letter is exact; the six illustrations are AI-generated scenes with no text in them.
+## What's in the image
+
+1. **GTA VI global rollout begins** — Vice City returns as the launch reaches players worldwide.
+2. **Democrats nominate Hakeem Jeffries** — the first Black Speaker of the US House.
+3. **Trump–Xi–Putin trilateral talks** — the three leaders meet today at APEC in Shenzhen.
+4. **Cyclone Akvan nears landfall** — the storm bears down between Machilipatnam and Puri.
+5. **EU proposes a €45bn Ukraine loan** — to be repaid from Russian reparations.
+6. **Voyager 1 reaches one light-day from Earth** — about 5:16 a.m. EST, the farthest human-made object yet.
 
 ## Run it
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
 ---
